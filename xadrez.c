@@ -1,12 +1,39 @@
 #include <stdio.h>
 
+void moverCima(int cima){
+       if(cima>0){
+              printf("Cima\n");
+              moverCima(cima-1);
+       }
+}
+void moverEsquerda(int esquerda){
+       if(esquerda>0){
+              printf("Esquerda\n");
+              moverEsquerda(esquerda-1);
+       }
+}
+void moverDireita(int direita){
+       if(direita>0){
+              printf("Direita\n");
+              moverDireita(direita-1);
+       }
+}
+void moverBaixo(int baixo){
+       if(baixo>0){
+              printf("Baixo\n");
+              moverBaixo(baixo-1);
+       }
+}
+
+
 int main(){
 // Declaração de variavéis
-int t,b=0,r=0,opcao,opcao2;
+int cavalo=1,torre=5,rainha=8,bispo=5,opcao,opcao2,j=1;
 // Menu de escolha do usuário da peça que deseja mover
 printf("1. Torre\n");
 printf("2. Bispo\n");
 printf("3. Rainha\n");
+printf("4. Cavalo\n");
 printf("Escolha a peca que deseja mover: ");
 scanf("%i",&opcao);
 switch(opcao){
@@ -20,28 +47,20 @@ switch(opcao){
        scanf("%i",&opcao2);
        switch(opcao2){
               case 1:
-                     // Estrutura de repetição 'for'
-                     for(t=0;t<5;t++){
-                            printf("Cima\n");
-                     }
+                     // Estrutura de repetição do movimento da 'Torre'
+                     moverCima(torre);
               break;
               case 2:
-                     // Estrutura de repetição 'for'
-                     for(t=0;t<5;t++){
-                            printf("Esquerda\n");
-                     }
+                     // Estrutura de repetição do movimento da 'Torre'
+                     moverEsquerda(torre);
               break;
               case 3:
-                     // Estrutura de repetição 'for'
-                     for(t=0;t<5;t++){
-                            printf("Direita\n");
-                     }
+                     // Estrutura de repetição do movimento da 'Torre'
+                     moverDireita(torre);
               break;
               case 4:
-                     // Estrutura de repetição 'for'
-                     for(t=0;t<5;t++){
-                            printf("Baixo\n");
-                     }
+                     // Estrutura de repetição do movimento da 'Torre'
+                     moverBaixo(torre);
               break;
               default: printf("Opcao Invalida\n");
               break;
@@ -57,32 +76,44 @@ switch(opcao){
        scanf("%i",&opcao2);
        switch(opcao2){
               case 1:
-                     // Estrutura de repetição 'while'
-                     while(b<5){
-                            printf("Cima-direita\n");
-                            b++;
-                     }
+                     // Estrutura de repetição do movimento da 'Bispo'
+                     moverCima(bispo);
+                      while(j==1){
+                            for(int i=0;i<5;i++){
+                                   printf("Direita\n");
+                            }
+                            j++;
+                      }
               break;
               case 2:
-                     // Estrutura de repetição 'while'
-                     while(b<5){
-                            printf("Cima-esquerda\n");
-                            b++;
-                     }
+                     // Estrutura de repetição do movimento da 'Bispo'
+                     moverCima(bispo);
+                     while(j==1){
+                            for(int i=0;i<5;i++){
+                                   printf("Esquerda\n");
+                            }
+                            j++;
+                      }
               break;
               case 3:
-                     // Estrutura de repetição 'while'
-                     while(b<5){
-                            printf("Baixo-direita\n");
-                            b++;
-                     }
+                     // Estrutura de repetição do movimento da 'Bispo'
+                     moverBaixo(bispo);
+                     while(j==1){
+                            for(int i=0;i<5;i++){
+                                   printf("Direita\n");
+                            }
+                            j++;
+                      }
               break;
               case 4:
-                     // Estrutura de repetição 'while'
-                     while(b<5){
-                            printf("Baixo-esquerda\n");
-                            b++;
-                     }
+                     // Estrutura de repetição do movimento da 'Bispo'
+                     moverBaixo(bispo);
+                     while(j==1){
+                            for(int i=0;i<5;i++){
+                                   printf("Esquerda\n");
+                            }
+                            j++;
+                      }
               break;
               default: printf("Opcao Invalida\n");
               break;
@@ -102,60 +133,101 @@ switch(opcao){
        scanf("%i",&opcao2);
        switch(opcao2){
               case 1:
-                     // Estrutura de repetição 'do-while'
-                     do{
-                            printf("Cima\n");
-                            r++;
-                     }while(r<8);
+                     // Estrutura de repetição do movimento da 'Rainha'
+                     moverCima(rainha);
               break;
               case 2:
-                     // Estrutura de repetição 'do-while'
-                     do{
-                            printf("Esquerda\n");
-                            r++;
-                     }while(r<8);
+                     // Estrutura de repetição do movimento da 'Rainha'
+                     moverEsquerda(rainha);
               break;
               case 3:
-                     // Estrutura de repetição 'do-while'
-                     do{
-                            printf("Direita\n");
-                            r++;
-                     }while(r<8);
+                     // Estrutura de repetição do movimento da 'Rainha'
+                     moverDireita(rainha);
               break;
               case 4:
-                     // Estrutura de repetição 'do-while'
-                     do{
-                            printf("Baixo\n");
-                            r++;
-                     }while(r<8);
+                     // Estrutura de repetição do movimento da 'Rainha'
+                     moverBaixo(rainha);
               break;
               case 5:
-                     // Estrutura de repetição 'do-while'
-                     do{
-                            printf("Cima-direita\n");
-                            r++;
-                     }while(r<8);
+                     // Estrutura de repetição do movimento da 'Rainha'
+                     moverCima(rainha);
+                     while(j==1){
+                            for(int i=0;i<8;i++){
+                                   printf("Direita\n");
+                            }
+                            j++;
+                      }
               break;
               case 6:
-                     // Estrutura de repetição 'do-while'
-                     do{
-                            printf("Cima-esquerda\n");
-                            r++;
-                     }while(r<8);
+                     // Estrutura de repetição do movimento da 'Rainha'
+                     moverCima(rainha);
+                     while(j==1){
+                            for(int i=0;i<8;i++){
+                                   printf("Esquerda\n");
+                            }
+                            j++;
+                      }
               break;
               case 7:
-                     // Estrutura de repetição 'do-while'
-                     do{
-                            printf("Baixo-direita\n");
-                            r++;
-                     }while(r<8);
+                     // Estrutura de repetição do movimento da 'Rainha'
+                     moverBaixo(rainha);
+                     while(j==1){
+                            for(int i=0;i<8;i++){
+                                   printf("Direita\n");
+                            }
+                            j++;
+                      }
               break;
               case 8:
-                     // Estrutura de repetição 'do-while'
-                     do{
-                            printf("Baixo-esquerda\n");
-                            r++;
-                     }while(r<8);
+                     // Estrutura de repetição do movimento da 'Rainha'
+                     moverBaixo(rainha);
+                     while(j==1){
+                            for(int i=0;i<8;i++){
+                                   printf("Esquerda\n");
+                            }
+                            j++;
+                      }
+              break;
+              default: printf("Opcao Invalida\n");
+              break;
+       }
+       break;
+       case 4:
+       // Menu de escolha do usuário da direçao que deseja mover o 'Cavalo'
+       printf("1. Cima e Esquerda\n");
+       printf("2. Cima e Direita\n");
+       printf("3. Baixo e Esquerda\n");
+       printf("4. Baixo e Direita\n");
+       printf("Escolha a direcao que quer mover a peca: ");
+       scanf("%i",&opcao2);
+       switch(opcao2){
+              case 1:
+                     // Estrutura de repetição aninhada que imprime a direção do 'Cavalo'
+                     for(int i=1;i<3;i++,cavalo++){
+                            printf("Cima\n");
+                            printf("Esquerda\n");
+                     };
+              break;
+              case 2:
+                     // Estrutura de repetição aninhada que imprime a direção do 'Cavalo'
+                     for(int i=1;i<3;i++,cavalo++){
+                            printf("Cima\n");
+                            printf("Direita\n");
+                     };
+              break;
+              case 3:
+                     // Estrutura de repetição aninhada que imprime a direção do 'Cavalo'
+                     for(int i=1;i<3;i++,cavalo++){
+                            printf("Baixo\n");
+                            printf("Esquerda\n");
+                     };
+              break;
+              case 4:
+                     // Estrutura de repetição aninhada que imprime a direção do 'Cavalo'
+                     for(int i=1;i<3;i++,cavalo++){
+                            printf("Baixo\n");
+                            printf("Direita\n");
+                     };
               break;
               default: printf("Opcao Invalida\n");
               break;
